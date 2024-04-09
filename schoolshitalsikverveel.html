@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ronde Knop met Afbeelding en Tekst</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #53f4ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            overflow-y: auto; /* Voeg scrollen toe als de inhoud te groot is */
+        }
+
+        .button {
+            background: url('afbeelding.jpg') no-repeat center center;
+            background-size: cover;
+            border: none;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .button p {
+            margin: 0;
+            color: black;
+            text-align: center;
+        }
+
+        .bovenste-tekst {
+            color: white;
+            font-size: 24px;
+            text-shadow: 0 0 500px rgba(0, 0, 0, 0.9);
+        }
+
+        .info-container {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: 999;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tekst bovenaan het scherm -->
+    <p class="bovenste-tekst">Knop erop</p>
+
+    <!-- Knop -->
+    <button class="button" onclick="showFullscreenImage()">
+        <p>Klik hierop</p>
+    </button>
+
+    <!-- Scrollbare inhoud over de maan -->
+    <div class="container">
+        <div class="info-container">
+            <h2>Informatie over de maan</h2>
+            <p>De maan is de enige natuurlijke satelliet van de aarde en de op vier na grootste maan van ons zonnestelsel. Het is de helderste object aan de nachtelijke hemel, behalve de aarde, door zonlicht weerkaatst van zijn droge, stoffige oppervlak. De maan is een object van ontzag en mystiek sinds de oudheid. Het is een bolvormig lichaam met een diameter van ongeveer 3.474 km.</p>
+            <p>De maan heeft een belangrijke invloed op de getijden op aarde. De zwaartekracht van de maan trekt water aan, wat resulteert in eb en vloed langs de kusten. De maan heeft ook invloed op het gedrag van dieren en planten, evenals op menselijke emoties volgens sommige overtuigingen.</p>
+            <p>De maan heeft geen atmosfeer, dus het oppervlak is niet beschermd tegen meteorietinslagen en straling. Dit heeft geleid tot de vorming van kraters en bergen door de eeuwen heen. Apollo-astronauten bezochten de maan in de jaren zestig en zeventig van de vorige eeuw, wat een schat aan wetenschappelijke gegevens opleverde over zijn samenstelling en geschiedenis.</p>
+            <!-- Voeg hier meer informatie toe over de maan -->
+        </div>
+    </div>
+
+    <!-- Contactinformatie -->
+    <div class="contact-info">
+        <p>E-mail: merterdogan54321@gmail.com</p>
+        <p>Telefoonnummer: 0687948538</p>
+    </div>
+
+    <!-- Fullscreen-afbeelding overlay -->
+    <div class="fullscreen-image" onclick="hideFullscreenImage()" style="background-image: url('nieuwe_afbeelding.jpg');">
+    </div>
+
+    <script>
+        function showFullscreenImage() {
+            var imageOverlay = document.querySelector('.fullscreen-image');
+            imageOverlay.style.display = 'block';
+
+            setTimeout(function() {
+                window.location.href = "https://play.geforcenow.com/games?game-id=46bfab06-d864-465d-9e56-2d9e45cdee0a&lang=nl_NL&asset-id=01_94ff5082-1d9e-40a3-9829-9a1abcbea7cc"; // Open de nieuwe website na 3 seconden
+            }, 3000); // 3000 milliseconden = 3 seconden
+        }
+
+        function hideFullscreenImage() {
+            var imageOverlay = document.querySelector('.fullscreen-image');
+            imageOverlay.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
